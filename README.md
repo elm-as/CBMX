@@ -26,6 +26,15 @@ flowchart LR
     TEL --> EVAL["src/evaluation/group_split.py"]
 ```
 
+## Résultats & Dataset (`data/turbofan_fleet.csv`)
+
+| Indicateur | Valeur observée | Description |
+|---|---|---|
+| Flotte & Cycles | `60` unités · `6 192` cycles | Télémétrie multi-capteurs censurée dans `data/turbofan_fleet.csv` |
+| Harrell's C-index | `0.9655` | Concordance de survie hors-échantillon (GroupSplit par unité) |
+| Courbe Kaplan-Meier | `10` paliers d'événements | Estimation exacte sous censure à droite |
+| Seuil optimal & Coût | `0.05` · `1 500.00` EUR/unité | Politique minimisant le coût asymétrique (`artifacts/results.json`) |
+
 ## Démarrage Rapide
 
 ```bash

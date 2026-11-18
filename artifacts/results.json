@@ -1,0 +1,8 @@
+{
+  "n_units": 60.0,
+  "n_cycles": 6192.0,
+  "km_steps": 10.0,
+  "c_index": 0.9655,
+  "optimal_threshold": 0.05,
+  "expected_cost_eur": 1500.0
+}

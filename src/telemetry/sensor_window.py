@@ -79,11 +79,13 @@ def generate_synthetic_fleet(n_units: int = 24, seed: int = 42) -> tuple[EngineC
     rows: list[EngineCycle] = []
     for unit_id in range(1, n_units + 1):
         censored = unit_id % 4 == 0
-        total_cycles = rng.randint(45, 110)
         rate = rng.uniform(0.08, 0.25)
+        # Higher degradation rate shortens time-to-failure; censored units are observed earlier.
+        base_life = int(16.0 / rate)
+        total_cycles = max(25, int(base_life * (0.75 if censored else 1.0)) + rng.randint(-4, 4))
         for cycle in range(1, total_cycles + 1):
-            temp = 600.0 + rate * cycle + rng.gauss(0.0, 1.2)
-            vib = 0.20 + 0.004 * rate * cycle + rng.gauss(0.0, 0.01)
+            temp = 600.0 + rate * cycle + rng.gauss(0.0, 0.8)
+            vib = 0.20 + 0.004 * rate * cycle + rng.gauss(0.0, 0.008)
             is_fail = (not censored) and (cycle == total_cycles)
             rows.append(EngineCycle(unit_id, cycle, round(temp, 3), round(vib, 4), is_fail))
     return tuple(rows)
