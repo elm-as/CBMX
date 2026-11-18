@@ -1,8 +1,12 @@
 {
-  "n_units": 60.0,
-  "n_cycles": 6192.0,
-  "km_steps": 10.0,
-  "c_index": 0.9655,
-  "optimal_threshold": 0.05,
-  "expected_cost_eur": 1500.0
+  "n_train_units": 100.0,
+  "n_train_cycles": 20631.0,
+  "n_test_units": 100.0,
+  "test_rmse_cycles": 18.3093,
+  "test_mae_cycles": 13.3683,
+  "nasa_asymmetric_score": 10.0474,
+  "c_index": 0.6057,
+  "km_steps": 66.0,
+  "optimal_threshold": 0.9,
+  "expected_cost_eur": 810.0
 }
