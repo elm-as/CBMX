@@ -1,6 +1,6 @@
 <div align="center">
 
-# CBMX — Condition-Based Maintenance & Survival Intelligence
+# CBMX - Condition-Based Maintenance & Survival Intelligence
 ### 200-Engine Telemetry, Right-Censored Kaplan-Meier Survival & GroupKFold LightGBM RUL Policy (NASA C-MAPSS FD001)
 
 <br/>
@@ -49,7 +49,7 @@ Système industriel complet de maintenance prédictive sur le benchmark officiel
 
 ## Problématique Industrielle & Asymétrie du Risque
 
-En aéronautique, l'erreur de prédiction de durée de vie résiduelle (*Remaining Useful Life — RUL*) a des conséquences fortement asymétriques :
+En aéronautique, l'erreur de prédiction de durée de vie résiduelle (*Remaining Useful Life - RUL*) a des conséquences fortement asymétriques :
 1. **Remplacement prématuré (faux positif)** : coût modéré de maintenance planifiée (`1 500 EUR/unité`).
 2. **Panne en exploitation (faux négatif / prédiction tardive)** : coût opérationnel et sécuritaire critique (`12 000 EUR/unité`).
 3. **Censure à droite** : les moteurs en flotte active (`test_FD001`) n'ont pas encore subi de panne au moment de l'observation ; un modèle naïf ignorant la censure biaise la distribution de durée de vie.
